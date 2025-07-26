@@ -2,7 +2,7 @@
 Chess piece and square colors.
 Simple enum with toggle functionality.
 """
-
+from __future__ import annotations
 import enum
 
 
@@ -12,11 +12,11 @@ class Color(enum.Enum):
     WHITE = 1
     BLACK = -1
 
-    def opposite(self) -> "Color":
+    def opposite(self) -> Color:
         """Return the opposite color."""
         return Color.WHITE if self == Color.BLACK else Color.BLACK
 
-    def __invert__(self) -> "Color":
+    def __invert__(self) -> Color:
         """Enable ~color syntax for getting opposite color."""
         return self.opposite()
 
